@@ -1,0 +1,146 @@
+
+@import  url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Montserrat;
+  background: #313E50;
+}
+
+.text-input{
+  
+  position: relative;
+  margin-top: 50px;
+  
+  input[type="text"]{
+    display: inline-block;
+    width: 500px;
+    height: 40px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 10px 10px 10px 100px;
+    transition: all 0.1s ease-out;
+  }
+  
+  input[type="text"] + label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    border-radius: 3px 0 0 3px;
+    padding: 0 20px;
+    background: #E03616;
+    transform: translateZ(0) translateX(0);
+    transition: all 0.3s ease-in;
+    transition-delay: 0.2s;
+  }
+  
+  input[type="text"]:focus + label{
+    transform: translateY(-120%) translateX(0%);
+    border-radius: 3px;
+    transition: all 0.1s ease-out;
+  }
+  
+  input[type="text"]:focus{
+    padding: 10px;
+    transition: all 0.3s ease-out;
+    transition-delay: 0.2s;
+  }
+  
+}
+
+.pass-input{
+  
+    position: relative;
+    margin-top: 50px;
+    
+    input[type="password"]{
+      display: inline-block;
+      width: 500px;
+      height: 40px;
+      box-sizing: border-box;
+      outline: none;
+      border: 1px solid lightgray;
+      border-radius: 3px;
+      padding: 10px 10px 10px 100px;
+      transition: all 0.1s ease-out;
+    }
+    
+    input[type="password"] + label{
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 40px;
+      line-height: 40px;
+      color: white;
+      border-radius: 3px 0 0 3px;
+      padding: 0 20px;
+      background: #0a7500;
+      transform: translateZ(0) translateX(0);
+      transition: all 0.3s ease-in;
+      transition-delay: 0.2s;
+    }
+    
+    input[type="password"]:focus + label{
+      transform: translateY(-120%) translateX(0%);
+      border-radius: 3px;
+      transition: all 0.1s ease-out;
+    }
+    
+    input[type="password"]:focus{
+      padding: 10px;
+      transition: all 0.3s ease-out;
+      transition-delay: 0.2s;
+    }
+    
+  }
+
+.btn{
+    margin-top: 3%;
+}
+
+.button-89 {
+    font-weight: bold;
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #000000;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
