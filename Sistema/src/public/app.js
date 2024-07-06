@@ -1,5 +1,5 @@
 async function cadastrar_user() {
-    const Caminho = 'src/php/controllers/cadastrouser.php';
+    const Caminho = '../src/controllers/RequestPopulateSelector.php';
     try {
         const nome_user = document.getElementById("input1").value;
         const senha = document.getElementById("pass1").value;
