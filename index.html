@@ -16,9 +16,18 @@
         <label for="pass1">Senha</label>
       </div>
       <div class="btn">
-        <button id="entrar" class="button-89" >Entrar</button>
+        <button id="entrar" class="button-89" onclick="login_user()">Entrar</button>
         <button id="cadastrar"  class="button-89"  onclick="cadastrar_user()" >Cadastrar</button>
       </div>
+      <dialog id="aviso_erro">
+        O nome de usuário e a senha não podem conter espaços.<br>
+        Pressione ESC para fechar
+      </dialog>
+
+      <dialog id="sucesso">
+        Jogador criado com sucesso!.<br>
+        Pressione ESC para fechar
+      </dialog>
 </body>
 <script src="/Sistema/src/public/app.js"></script>
 </html>

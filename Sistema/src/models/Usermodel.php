@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . '/../../DB/Database.php';
-require_once __DIR__ . '/../../PHP/MODELS/User.php';
+require_once __DIR__ . '/../database/Database.php';
+require_once __DIR__ . '/../models/User.php';
 
 class Usermodel
 {
@@ -12,31 +12,32 @@ class Usermodel
         $this->user = $user;
     }
 
-    public function save()
+    /**
+     * Salva o usuário no banco de dados.
+     *
+     * @return bool 
+     */
+    public function save(): bool
     {
         $nome = $this->user->getNome();
         $senha = $this->user->getSenha();
 
         try {
-            $conn = Database::getConn(); // Obtém a conexão com o banco de dados
+            $conn = Database::getConn(); 
 
-            // Prepara a query SQL para inserir um novo usuário
             $stmt = $conn->prepare('INSERT INTO USER (Nome, Senha) VALUES (:nome, :senha)');
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':senha', $senha);
-
-            // Executa a query
             if ($stmt->execute()) {
-                return true; // Retorna verdadeiro se a inserção for bem-sucedida
+                return true; 
             } else {
-                return false; // Retorna falso se houver algum erro na execução
+                return false; 
             }
         } catch (PDOException $e) {
-            // Em caso de erro, você pode tratar de alguma forma
-            echo "Erro ao salvar usuário: " . $e->getMessage();
-            return false; // Retorna falso em caso de exceção
+            error_log("Erro ao salvar usuário: " . $e->getMessage());
+            return false; 
+        } finally {
+            $conn = null;
         }
     }
 }
-
-?>

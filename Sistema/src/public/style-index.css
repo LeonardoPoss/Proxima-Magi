@@ -144,3 +144,9 @@ cursor: pointer;
   background: var(--color);
   color: #fff;
 }
+
+#aviso_erro, #sucesso{
+  font-family: Montserrat;
+  border: none;
+  border-radius: 3%;
+}
